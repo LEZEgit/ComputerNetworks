@@ -9,7 +9,7 @@ This project implements a simplified **Error Correcting Code (ECC)** based on pa
 1. **Parity Generation:** The data frame is divided into overlapping groups ($G_0, G_1, G_2$). A parity bit is generated for each group and appended to the data to form a **Codeword**.
 2. **Error Simulation:** A single bit (either in the data or the parity section) is randomly flipped to simulate transmission noise.
 3. **Syndrome Detection:** The receiver recalculates parity for all groups. If the calculated parity doesn't match the received parity, that group is added to a `failParity` set.
-4. **Bit Isolation:** * If only one parity bit fails, the error is in the parity bit itself.
+4. **Bit Isolation:** If only one parity bit fails, the error is in the parity bit itself.
 * If multiple groups fail, the error is in a data bit. The code finds the **intersection** of all failed groups and **subtracts** any bits belonging to groups that passed. The remaining bit is the culprit.
 
 
