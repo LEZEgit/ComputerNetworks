@@ -2,7 +2,7 @@
 
 ## Single Bit Error Correction (SEC)
 
-This project implements a simplified **Error Correcting Code (ECC)** based on parity groups. It simulates the process of encoding a data frame, introducing a random bit-flip error, and using set theory to isolate and correct the corrupted bit.
+This project implements a simplified **Error Correcting Code (ECC)** based on parity groups. It simulates the process of encoding a data frame, introducing a random bit-flip error, and using set theory to isolate and correct the corrupted bit at the receiver's side. Since the receiver doesn't know which codeword was sent, but it does know that received codeword is erroneous (by recalculating the parity of each group and comparing it with what it received). Based on this recalculation and knowledge of groups within the codeword (which can be sent as metadata) and that the transmitting channel can generate error of atmost 1 bit only (assumption for this project), the receiver can find the erroneous bit (if any) and correct it. 
 
 ### 🛠 How it Works
 
